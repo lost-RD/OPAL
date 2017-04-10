@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef Abstract="True" Name="OPAL_BaseWeapon">
+		<thingClass>ThingWithComps</thingClass>
+		<category>Item</category>
+		<drawGUIOverlay>true</drawGUIOverlay>
+		<altitudeLayer>Item</altitudeLayer>
+		<alwaysHaulable>true</alwaysHaulable>
+		<tickerType>Never</tickerType>
+		<equipmentType>Primary</equipmentType>
+		<useHitPoints>true</useHitPoints>
+		<pathCost>10</pathCost>
+		<selectable>true</selectable>
+		<stackLimit>1</stackLimit>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+			<DeteriorationRate>2</DeteriorationRate>
+			<Beauty>-6</Beauty>
+			<SellPriceFactor>0.20</SellPriceFactor>
+		</statBases>
+		<comps>
+			<li Class="CompProperties_Forbiddable"/>
+			<li>
+				<compClass>CompEquippable</compClass>
+			</li>
+		</comps>
+		<graphicData>
+			<onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef Name="OPAL_BaseGun" Abstract="True" ParentName="OPAL_BaseWeapon">
+		<techLevel>Industrial</techLevel>
+		<smeltable>true</smeltable>
+		<thingCategories>
+			<li>WeaponsRanged</li>
+		</thingCategories>
+		<inspectorTabs>
+			<li>ITab_Art</li>
+		</inspectorTabs>
+	</ThingDef>
+
+	<ThingDef Name="OPAL_BaseBullet" Abstract="True">
+		<category>Projectile</category>
+		<tickerType>Normal</tickerType>
+		<altitudeLayer>Projectile</altitudeLayer>
+		<thingClass>Bullet</thingClass>
+		<label>bullet</label>
+		<useHitPoints>False</useHitPoints>
+		<neverMultiSelect>True</neverMultiSelect>
+		<graphicData>
+			<shaderType>Transparent</shaderType>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef Name="OPAL_BuildingBase" Abstract="True">
+		<category>Building</category>
+		<thingClass>Building</thingClass>
+		<soundImpactDefault>BulletImpactMetal</soundImpactDefault>
+		<selectable>true</selectable>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<repairEffect>Repair</repairEffect>
+		<leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+		<filthLeaving>BuildingRubble</filthLeaving>
+	</ThingDef>
+
+	<!-- ================ SkyDriller ================ -->
+
+	<ThingDef ParentName="OPAL_BaseBullet">
+		<defName>OPAL_Bullet</defName>
+		<label>OPAL bullet</label>
+		<thingClass>RD_OPAL.Projectile_LaserBullet</thingClass>
+		<graphicData>
+			<texPath>OPAL_Bullet</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+		</graphicData>
+		<projectile>
+			<flyOverhead>true</flyOverhead>
+			<damageDef>Stun</damageDef>
+			<DamageAmountBase>0</DamageAmountBase>
+			<Speed>1000</Speed>
+			<soundHitThickRoof>ArtilleryHitThickRoof</soundHitThickRoof>
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="OPAL_BaseGun">
+		<defName>OPAL_LaserGuidanceDevice</defName>
+		<label>OPAL laser guidance device</label>
+		<description>Requests a deployment of the orbital peace assurance laser. It will first move into position, then fire on an outdoor spot of your choosing (places without overhead mountains). Be careful - not only will it vaporize everything in its path, but it will leave behind scorched earth that won't harbour life.</description>
+		<graphicData>
+			<texPath>OPAL_Requester</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<canBeSpawningInventory>false</canBeSpawningInventory>
+		<statBases>
+			<MarketValue>5000</MarketValue>
+			<Mass>1.2</Mass>
+		</statBases>
+		<weaponTags>
+			<li>Gun</li>
+			<li>GunHeavy</li>
+		</weaponTags>
+		<tradeTags>
+			<li>Exotic</li>
+		</tradeTags>
+		<verbs>
+			<li>
+				<accuracyTouch>1.0</accuracyTouch>
+				<accuracyShort>1.0</accuracyShort>
+				<accuracyMedium>1.0</accuracyMedium>
+				<accuracyLong>1.0</accuracyLong>
+				<verbClass>Verb_ShootOneUse</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<projectileDef>OPAL_Bullet</projectileDef>
+				<warmupTime>4</warmupTime>
+				<range>9999</range>
+				<burstShotCount>1</burstShotCount>
+				<onlyManualCast>true</onlyManualCast>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+			</li>
+		</verbs>
+	</ThingDef>
+
+	<ThingDef ParentName="OPAL_BuildingBase">
+		<defName>OPAL_LaserDeployed</defName>
+		<label>laser deployed</label>
+		<description></description>
+		<thingClass>RD_OPAL.Building_LaserDeployed</thingClass>
+		<graphicData>
+			<texPath>OPAL_Bullet</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<altitudeLayer>TerrainScatter</altitudeLayer>
+		<building>
+			<isEdifice>false</isEdifice>
+		</building>
+		<passability>PassThroughOnly</passability>
+		<useHitPoints>false</useHitPoints>
+		<selectable>false</selectable>
+		<tickerType>Normal</tickerType>
+		<size>(1,1)</size>
+	</ThingDef>
+
+	<ThingDef ParentName="OPAL_BuildingBase">
+		<defName>OPAL_LaserAction</defName>
+		<label>laser in action</label>
+		<description></description>
+		<thingClass>RD_OPAL.Building_LaserAction</thingClass>
+		<graphicData>
+			<texPath>OPAL_Bullet</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<altitudeLayer>TerrainScatter</altitudeLayer>
+		<building>
+			<isEdifice>false</isEdifice>
+		</building>
+		<pathCost>55</pathCost>
+		<pathCostIgnoreRepeat>true</pathCostIgnoreRepeat>
+		<passability>PassThroughOnly</passability>
+		<useHitPoints>false</useHitPoints>
+		<selectable>false</selectable>
+		<tickerType>Normal</tickerType>
+		<size>(3,3)</size>
+		<comps>
+			<li Class="CompProperties_HeatPusher">
+				<compClass>CompHeatPusher</compClass>
+				<heatPerSecond>2800</heatPerSecond>
+			</li>
+		</comps>
+	</ThingDef>
+
+</Defs>

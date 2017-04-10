@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<RD_OPAL.ScorchedTerrain>
+		<defName>dummyNamePleaseIgnore</defName>
+		<label>you should not be able to read this</label>
+	</RD_OPAL.ScorchedTerrain>
+
+</Defs>

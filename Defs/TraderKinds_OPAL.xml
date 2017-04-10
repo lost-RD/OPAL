@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TraderKindDefs>
+
+  <TraderKindDef>
+    <defName>OPAL_OrbitalCannon</defName>
+    <label>orbital peace assurance laser</label>
+    <orbital>true</orbital>
+    <stockGenerators>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>OPAL_LaserGuidanceDevice</thingDef>
+        <countRange>
+          <min>1</min>
+          <max>1</max>
+        </countRange>
+      </li>
+    </stockGenerators>
+  </TraderKindDef>
+
+</TraderKindDefs>

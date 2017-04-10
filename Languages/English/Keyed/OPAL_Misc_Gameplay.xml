@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <OPAL_LaserRequested>Request for orbital laser deployment sent.</OPAL_LaserRequested>
+  <OPAL_LaserApproaching>Your request for OPAL deployment has been granted. We appreciate your business.</OPAL_LaserApproaching>
+  <OPAL_LaserInitiating>OPAL in position, initiating...</OPAL_LaserInitiating>
+  <OPAL_LaserComplete>Deployment complete. We hope to serve you again.</OPAL_LaserComplete>
+  
+</LanguageData>

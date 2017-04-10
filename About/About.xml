@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+
+    <name>RD - Orbital Peace Assurance Laser</name>
+
+    <author>lost_RD</author>
+
+    <url>https://ludeon.com/forums/index.php?topic=21938.0</url>
+
+    <targetVersion>0.16.1393</targetVersion>
+
+    <description>OPAL is a satellite that orbits your rimworld and every now and then it will come in range of your comms console. Buy a use of OPAL's laser and you will be given a laser guidance device. In a time of great need, deploy the laser and watch your foes be vapourised! You only get one use per purchase though so use it wisely.
+
+Thanks to the Industrialization mod, originally developed my eatKenny and currently maintained by duduluu, for their skydriller code, without which this mod would not have been possible.
+
+This mod was designed with modded storytellers in mind, such as Pandora Dark by Britnoth. For vanilla gameplay, it might be a bit overpowered, although it is very expensive to compensate.
+
+
+Version 1.0:
+- First release!</description>
+
+</ModMetaData>
