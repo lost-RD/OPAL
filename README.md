@@ -8,8 +8,8 @@ Thanks to the Industrialization mod, originally developed my eatKenny and curren
 
 This mod was designed with modded storytellers in mind, such as Pandora Dark by Britnoth. For vanilla gameplay, it might be a bit overpowered, although it is very expensive to compensate.
 
-##Changelog:
+## Changelog:
 
-###1.0:
+### 1.0:
 * Spent a bunch of hours on this
 * Even spent a bunch of hours testing it for a change
