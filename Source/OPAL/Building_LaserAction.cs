@@ -21,9 +21,9 @@ namespace RD_OPAL
         private static readonly SoundDef PlasmaDrill = SoundDef.Named("OPAL_Sound");
         private static readonly SoundDef PlasmaDrillFire = SoundDef.Named("OPAL_Fire");
 
-		public override void SpawnSetup(Map map)
+		public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
-            base.SpawnSetup(map);
+            base.SpawnSetup(map, respawningAfterLoad);
             this.drilltickAmountToGen = this.randomDrillticks();
             this.drillticksRemaining = this.drilltickAmountToGen;
         }

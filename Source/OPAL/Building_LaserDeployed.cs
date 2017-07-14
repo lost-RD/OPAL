@@ -10,9 +10,9 @@ namespace RD_OPAL
         public int waitticksRemaining = 0;
         public int waittickAmountToGen = 0;
 
-        public override void SpawnSetup(Map map)
+        public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
-            base.SpawnSetup(map);
+            base.SpawnSetup(map, respawningAfterLoad);
             Messages.Message("OPAL_LaserRequested".Translate(), MessageSound.Standard);
             this.waittickAmountToGen = this.randomWaitticks();
             this.waitticksRemaining = this.waittickAmountToGen;
