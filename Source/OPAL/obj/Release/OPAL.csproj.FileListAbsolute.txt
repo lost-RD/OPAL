@@ -1,3 +1,0 @@
-C:\Games\RimWorld\A17\RimWorld1557Win\Mods\RD_OPAL\Source\OPAL\obj\Release\OPAL.csprojResolveAssemblyReference.cache
-C:\Games\RimWorld\A17\RimWorld1557Win\Mods\RD_OPAL\Assemblies\OPAL.dll
-C:\Games\RimWorld\A17\RimWorld1557Win\Mods\RD_OPAL\Source\OPAL\obj\Release\OPAL.dll
